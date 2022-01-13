@@ -159,7 +159,9 @@ final class Robot {
     // Get strings from resources, and remove unnecessary characters in order to improve performance
     private final func setOperationsStrings() {
         
-        let textArray = text.split(whereSeparator: \.isNewline)
+
+       let textArray = text.split(whereSeparator: \.isNewline)
+        
         textArray.enumerated().forEach { (index, element) in
             if (index > 1) {
             
@@ -206,9 +208,8 @@ final class Robot {
     // Create array which holds iterations of permutated positions of the operation strings
         
         heapPermutation(data: &movementsPositions) { result in
-            print(result)
             result.enumerated().forEach { (element, index) in
-//                print(index)
+
             if (element == 0) {
                 
                 position = Position(onXAxis: 0, onYAxis: 0, movementDirection: MovementDirections.North)
